@@ -1,0 +1,22 @@
+import React from 'react'
+import reducer from './store'
+import { injectReducer } from 'store/index'
+import { AdaptableCard } from 'components/shared'
+import AccountTable from './components/AccountTable'
+import AccountTableTools from './components/AccountTableTools'
+
+injectReducer('defiAccountList', reducer)
+
+const AccountList = () => {
+    return (
+        <AdaptableCard className="h-full" bodyClass="h-full">
+            <div className="lg:flex items-center justify-between mb-4">
+                <h3 className="mb-4 lg:mb-0">Accounts</h3>
+                <AccountTableTools />
+            </div>
+            <AccountTable />
+        </AdaptableCard>
+    )
+}
+
+export default AccountList
